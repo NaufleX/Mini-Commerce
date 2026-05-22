@@ -1,0 +1,25 @@
+# Systemd service file for Mini-Commerce (Alternative to PM2)
+# Save this to: /etc/systemd/system/mini-commerce.service
+# Then enable with: sudo systemctl enable mini-commerce.service
+# Start with: sudo systemctl start mini-commerce.service
+
+[Unit]
+Description=Mini-Commerce Node.js Application
+After=network.target
+
+[Service]
+Type=simple
+User=<USERNAME>
+WorkingDirectory=/home/<USERNAME>/mini-commerce
+ExecStart=/usr/bin/node /home/<USERNAME>/mini-commerce/src/server.js
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/<USERNAME>/mini-commerce/logs/app.log
+StandardError=append:/home/<USERNAME>/mini-commerce/logs/error.log
+Environment="NODE_ENV=production"
+Environment="PORT=3000"
+
+[Install]
+WantedBy=multi-user.target
+
+# Note: Replace <USERNAME> with the actual system username
