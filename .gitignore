@@ -14,5 +14,5 @@ yarn-error.log*
 .pem
 .key
 dist/
-build/
+build/  
 coverage/
