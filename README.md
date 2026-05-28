@@ -14,6 +14,7 @@ A lightweight, production-ready Node.js web application for managing a simple pr
 - ✅ Real-time stock management
 
 ---
+
 ## 📋 Prerequisites
 
 - **Node.js** v14+ (v18+ recommended)
